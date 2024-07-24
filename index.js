@@ -7,6 +7,9 @@ require("dotenv").config()
 const port = process.env.PORT
 const app = express()
 app.use(cors())
+app.use(cors({
+  origin: 'https://notes-app-frontend-nine.vercel.app'
+}));
 app.use(express.json())
 app.use("/user",userRouter)
 app.use("/note",noteRouter)
